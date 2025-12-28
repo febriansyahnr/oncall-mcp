@@ -26,6 +26,3 @@ def get_payout_transaction(identifier: str, by_client_id: bool = False) -> str:
         return "Transaction not found."
     except Exception as e:
         return f"Error fetching payout transaction: {str(e)}"
-
-if __name__ == "__main__":
-    mcp.run(transport="sse")
