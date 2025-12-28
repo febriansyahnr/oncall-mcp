@@ -4,7 +4,7 @@ from pydantic import ValidationError
 # Initialize FastMCP
 mcp = FastMCP("My Alchemy Server")
 
-from src.use_cases.payout_service import find_transaction_by_uuid, find_transaction_by_client_id
+from src.use_cases.xb.payout_service import find_transaction_by_uuid, find_transaction_by_client_id
 
 @mcp.tool()
 def get_payout_transaction(identifier: str, by_client_id: bool = False) -> str:

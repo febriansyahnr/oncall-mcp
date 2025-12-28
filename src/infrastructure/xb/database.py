@@ -15,17 +15,17 @@ metadata = MetaData()
 # We attempt to reflect 'payout_transactions' from XB.
 
 # Specific reflection for payout_transactions (XB only)
-payout_table = None
+payout_transactions_table = None
 
 def init_reflection():
     """Reflect tables from database."""
-    global payout_table
+    global payout_transactions_table
     try:
         with xb_engine.connect():
-            payout_table = Table('payout_transactions', metadata, autoload_with=xb_engine)
+            payout_transactions_table = Table('payout_transactions', metadata, autoload_with=xb_engine)
     except Exception as e:
         print(f"Warning: Could not reflect 'payout_transactions' from xb: {e}")
-        payout_table = None
+        payout_transactions_table = None
 
 # Run reflection immediately (module load time)
 init_reflection()
