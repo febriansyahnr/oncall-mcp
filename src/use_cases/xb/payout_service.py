@@ -1,4 +1,5 @@
-from src.infrastructure.xb.database import get_db_connection, payout_transactions_table
+from src.infrastructure.database.connection import get_db_connection
+from src.infrastructure.database.xb import payout_transactions_table
 from src.domain.xb.models import PayoutTransactionRead
 from sqlalchemy import select
 

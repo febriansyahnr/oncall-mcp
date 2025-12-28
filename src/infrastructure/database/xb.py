@@ -3,11 +3,9 @@ import os
 
 # 1. Connection
 XB_DATABASE_URL = os.getenv("XB_DATABASE_URL", "mysql+pymysql://user:pass@localhost:3306/xb_db")
-SNAP_DATABASE_URL = os.getenv("SNAP_DATABASE_URL", "mysql+pymysql://user:pass@localhost:3306/snap_db")
 
 # Create separate engines
 xb_engine = create_engine(XB_DATABASE_URL)
-snap_engine = create_engine(SNAP_DATABASE_URL)
 
 metadata = MetaData()
 
@@ -29,9 +27,3 @@ def init_reflection():
 
 # Run reflection immediately (module load time)
 init_reflection()
-
-def get_db_connection(alias: str = 'xb'):
-    """Get connection for specific database."""
-    if alias == 'snap':
-        return snap_engine.connect()
-    return xb_engine.connect()
