@@ -2,7 +2,7 @@ from mcp.server.fastmcp import FastMCP
 from pydantic import ValidationError
 
 # Initialize FastMCP
-mcp = FastMCP("My Alchemy Server")
+mcp = FastMCP("Pivot On Call MCP")
 
 from src.use_cases.xb.payout_service import find_transaction_by_uuid, find_transaction_by_client_id
 
