@@ -1,18 +1,6 @@
 from pydantic import BaseModel, ConfigDict
 from datetime import datetime
 from typing import Optional
-
-# Clean Architecture: These are your Entities/DTOs.
-# They know NOTHING about the database.
-
-class UserRead(BaseModel):
-    id: int
-    username: str
-    email: str
-    created_at: Optional[datetime] = None
-
-    model_config = ConfigDict(from_attributes=True)
-
 from decimal import Decimal
 
 class PayoutTransactionRead(BaseModel):
